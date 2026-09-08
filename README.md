@@ -15,8 +15,12 @@ Hermes Agent 环境自检与排障手册：健康检查、依赖诊断、配置�
 ## 兼容性
 
 > **Primary target:** Hermes CN Desktop on Windows  
-> **Tested primarily with:** Hermes CN Desktop 0.19.0-cn.7, Hermes CN Desktop 0.20.0-cn.5, Windows 10/11  
+> **Tested primarily with:** Hermes CN Desktop 0.19.0-cn.7, Hermes CN Desktop 0.20.0-cn.5, Hermes CN Desktop 0.20.0-cn.8, Windows 10/11  
 > Other Hermes distributions may differ.
+
+> **Version applicability note (实测于 0.20.0-cn.8):**
+> - 只读诊断脚本 `scripts/hermes-doctor.ps1` 在 0.19.0-cn.7 / 0.20.0-cn.5 / 0.20.0-cn.8 均可用：能自动识别并报告激活的 runtime（含 `0.20.0-cn.8`），全部 CLI 子命令实测 exit 0、无超时。
+> - 修复脚本 `scripts/apply-weixin-cron-fix.py` 有意**仅限 0.20.0-cn.5**（内置版本保护，检测到其它版本会拒绝执行并退出码 1）。原因是其修复的 `InProcessCronScheduler` 打包缺陷只在 0.20.0-cn.5 存在；0.20.0-cn.8 的 runtime 已正常打包 cron 模块，**不需要**该 workaround——在 cn.8 上被拒绝是正确行为，不是脚本缺陷。
 
 ## 环境依赖（普通用户对照）
 
