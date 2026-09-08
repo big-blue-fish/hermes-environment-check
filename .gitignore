@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.bak
+*.hermes-cron-fix.*.bak
+report.json
+.DS_Store
+Thumbs.db

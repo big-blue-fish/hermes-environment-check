@@ -1,0 +1,22 @@
+name: Bug report
+description: Report a reproducible problem with the skill or its diagnostics.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not paste API keys, tokens, cookies, .env contents, or unredacted doctor reports."
+  - type: textarea
+    id: symptom
+    attributes:
+      label: Symptom
+      description: What failed and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Redacted doctor output
+      description: Paste only the relevant, manually reviewed sections.
+    validations:
+      required: false
